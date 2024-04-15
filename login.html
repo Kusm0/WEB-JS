@@ -49,7 +49,7 @@
 <body>
 <div class="container">
     <h2>Вхід</h2>
-    <form action="/submit_login" method="post">
+    <form id="loginForm">
         <label for="username">Ім'я користувача або Email:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Пароль:</label>
@@ -57,5 +57,32 @@
         <input type="submit" value="Увійти">
     </form>
 </div>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event){
+        event.preventDefault(); // Prevent the default form submission
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        // Here you can perform an AJAX request to submit the login data to the server
+        // For example:
+        /*
+        fetch("/submit_login", {
+            method: "POST",
+            body: JSON.stringify({ username: username, password: password }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server
+            console.log(data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error("Error:", error);
+        });
+        */
+    });
+</script>
 </body>
 </html>
