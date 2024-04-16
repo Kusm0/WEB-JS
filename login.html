@@ -49,16 +49,15 @@
 <body>
 <div class="container">
     <h2>Вхід</h2>
-    <form id="loginForm">
-<label for="username">Логін:</label>
-<input type="text" id="username" name="username" required>
+    <form id="loginForm" onsubmit="event.preventDefault(); submitLoginForm()">
+    <label for="username">Логін:</label>
+    <input type="text" id="username" name="username" required>
 
-<label for="password">Пароль:</label>
-<input type="password" id="password" name="password" required>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
 
-<button type="button" onclick="submitLoginForm()">Увійти</button>
-
-    </form>
+    <button type="submit">Увійти</button>
+</form>
 </div>
     <script>
       // This script will be executed when the page loads
