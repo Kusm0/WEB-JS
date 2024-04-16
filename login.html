@@ -65,5 +65,38 @@
           
           });
   </script>
+    <script>
+    function submitLoginForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        // Створюємо новий об'єкт запиту
+        var xhr = new XMLHttpRequest();
+        
+        // Вказуємо метод та URL запиту
+        xhr.open("POST", "/login", true);
+        
+        // Встановлюємо заголовок запиту
+        xhr.setRequestHeader("Content-Type", "application/json");
+        
+        // Формуємо дані для відправки
+        var data = JSON.stringify({
+            username: username,
+            password: password
+        });
+        
+        // Встановлюємо обробник події завершення запиту
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Виконуємо дії після успішної відправки запиту
+                console.log(xhr.responseText);
+            }
+        };
+        
+        // Відправляємо запит з даними
+        xhr.send(data);
+    }
+</script>
+
 </body>
 </html>
