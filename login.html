@@ -56,7 +56,7 @@
 <label for="password">Пароль:</label>
 <input type="password" id="password" name="password" required>
 
-<button type="submit" onclick="submitLoginForm()" onclick="window.location.href = 'main.html'">Увійти</button>
+<button type="submit" onclick="submitLoginForm()">Увійти</button>
 
     </form>
 </div>
@@ -68,7 +68,7 @@
           
           });
   </script>
-    <script>
+<script>
     function submitLoginForm() {
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
@@ -90,9 +90,16 @@
         
         // Встановлюємо обробник події завершення запиту
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Виконуємо дії після успішної відправки запиту
-                console.log(xhr.responseText);
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // Виконуємо дії після успішної відправки запиту
+                    console.log(xhr.responseText);
+                    // Перенаправляємо на сторінку main.html
+                    window.location.href = "main.html";
+                } else {
+                    // Виконуємо дії у випадку помилки
+                    console.error("Помилка: " + xhr.status);
+                }
             }
         };
         
@@ -100,6 +107,7 @@
         xhr.send(data);
     }
 </script>
+
 
 </body>
 </html>
