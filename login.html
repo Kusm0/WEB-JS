@@ -41,7 +41,7 @@
         cursor: pointer;
         width: 100%;
     }
-    input[type="button"]:hover {
+    input[type="submit"]:hover {
         background-color: #45a049;
     }
 </style>
@@ -56,7 +56,7 @@
 <label for="password">Пароль:</label>
 <input type="password" id="password" name="password" required>
 
-<button type="button" onclick="submitLoginForm()">Увійти</button>
+<button type="submit" onclick="submitLoginForm()" onclick="window.location.href = 'main.html'">Увійти</button>
 
     </form>
 </div>
