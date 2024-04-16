@@ -57,32 +57,13 @@
         <input type="submit" value="Увійти">
     </form>
 </div>
-<script>
-    document.getElementById("loginForm").addEventListener("submit", function(event){
-        event.preventDefault(); // Prevent the default form submission
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        // Here you can perform an AJAX request to submit the login data to the server
-        // For example:
-        /*
-        fetch("/submit_login", {
-            method: "POST",
-            body: JSON.stringify({ username: username, password: password }),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle the response from the server
-            console.log(data);
-        })
-        .catch(error => {
-            // Handle errors
-            console.error("Error:", error);
-        });
-        */
-    });
-</script>
+    <script>
+      // This script will be executed when the page loads
+      document.addEventListener("DOMContentLoaded", function() {
+        
+          console.log("Page loaded!");
+          
+          });
+  </script>
 </body>
 </html>
